@@ -41,6 +41,16 @@ public:
         }
         cout<<endl;
     }
+    bool searchLinkedList (int query) {
+        Node* curr_node = head;
+        while (curr_node !=nullptr){
+            if (curr_node->data = query)
+                return true;
+            curr_node = curr_node->next;
+        } 
+        return false;
+    }
+    
 };
 
 int main() {
@@ -50,6 +60,7 @@ int main() {
     alpha.append(3);
     alpha.append(4);
     alpha.append(5);
+    bool a = alpha.searchLinkedList(1);
     alpha.printlist();
     return 0;
 }
