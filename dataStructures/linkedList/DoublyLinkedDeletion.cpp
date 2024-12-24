@@ -66,6 +66,21 @@ public:
 		}
 		cout<<endl;
 	}
+//	void fwdRecTrv (Node* head) {
+//		if (head == nullptr) return;
+//		cout<<head->data<<" ";
+//		fwdRecTrv(head->next);
+//	}
+	void fwdRecTrvHelper(Node* head, vector<int>& result) { 
+		if (head == nullptr) return;
+		result.push_back(head->data);
+		fwdRecTrvHelper(head->next, result);
+	} 
+	vector<int> fwdRecTrv(Node* head) { 
+		vector<int> result;
+		fwdRecTrvHelper(head, result);
+		return result; 
+	}
 };
 
 int main() {
@@ -76,6 +91,10 @@ int main() {
 	head->next->prev = head;
 	head->next->next = new Node(3);
 	head->next->next->prev = head->next;
+	vector<int> james = ll.fwdRecTrv(head);
+	for (int i=0;i<james.size();i++) 
+		cout<<james[i]<<" ";
+	cout<<endl;
 	cout<<"Orignal List ";
 	ll.printlist(head);
 	head = ll.delHead(head);
