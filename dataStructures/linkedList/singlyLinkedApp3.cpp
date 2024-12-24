@@ -18,7 +18,6 @@ class LinkedList{
 public:
     Node* head;
     Node* tail;
-
     LinkedList(){
         head = nullptr;
         tail = nullptr;
@@ -54,7 +53,7 @@ public:
 };
 
 int main() {
-    LinkedList alpha;
+	  LinkedList alpha;
     alpha.append(1);
     alpha.append(2);
     alpha.append(3);
@@ -63,4 +62,5 @@ int main() {
     bool a = alpha.searchLinkedList(1);
     alpha.printlist();
     return 0;
+  
 }
